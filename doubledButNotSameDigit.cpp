@@ -1,6 +1,6 @@
 // Thanh Nha Phan
 // CS 1337
-// Lab 15
+// Lab 17
 
 #include <iostream>
 #include <iomanip>
@@ -40,30 +40,11 @@ bool checkDigits(const bool digits[], int n) {
    return true;
 }
 
-//This function creates a line of hyphens
-void printLine(ostream& out, int n) {
-   char ch = out.fill();
-   cout << setfill('-') << setw(n) << "-" << setfill(ch) << endl;
-   return;
-}
-
-int main() {
-   int n;
-   bool digits[10];
-   printLine(cout, 13);
-   cout << "  n      2n  " << endl;
-   printLine(cout, 13);
-   for (n = 1234; n <= 49876; n++) {
-      initializeDigits(digits, 10, false);
-      determineDigits(digits, 10, n);
-      determineDigits(digits, 10, 2*n);
-      if (checkDigits(digits, 10)) {
-         cout << setfill('0') << setw(5) << n << "   " << setw(5) << 2*n << setfill(' ') << endl;
-      }
-   }
-   printLine(cout, 13);
-
-   return 0;
+void printLine(ostream& out, int n)
+{
+  char ch = out.fill();
+  out << setfill('-') << setw(n) << "-" << setfill(ch) << endl;
+  return;
 }
 
 int main()
@@ -89,4 +70,3 @@ int main()
 
   return 0;
 }
-
